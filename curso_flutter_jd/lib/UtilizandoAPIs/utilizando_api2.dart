@@ -24,6 +24,7 @@ class _Consumo_Servicos_API2State extends State<Consumo_Servicos_API2> {
     setState(() {
       _preco = retorno['BRL']['buy'].toString();
     });
+    //!teste
 
   }
   @override
