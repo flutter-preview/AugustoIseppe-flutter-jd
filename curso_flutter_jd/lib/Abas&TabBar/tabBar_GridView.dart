@@ -1,6 +1,6 @@
-import 'package:desenvolvimento_flutter/Abas&TabBar/primeira_pagina.dart';
-import 'package:desenvolvimento_flutter/Abas&TabBar/segunda_pagina.dart';
-import 'package:desenvolvimento_flutter/Abas&TabBar/terceira_pagina.dart';
+import 'package:curso_flutter_jd/Abas&TabBar/primeira_pagina.dart';
+import 'package:curso_flutter_jd/Abas&TabBar/segunda_pagina.dart';
+import 'package:curso_flutter_jd/Abas&TabBar/terceira_pagina.dart';
 import 'package:flutter/material.dart';
 
 class AbasETabBar extends StatefulWidget {

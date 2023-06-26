@@ -1,7 +1,7 @@
 // ignore_for_file: unused_import, unused_field, unused_local_variable, duplicate_ignore
 
-import 'package:desenvolvimento_flutter/helper/AnotacaoHelper.dart';
-import 'package:desenvolvimento_flutter/model/anotacao.dart';
+import 'package:curso_flutter_jd/helper/AnotacaoHelper.dart';
+import 'package:curso_flutter_jd/model/anotacao.dart';
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:intl/intl.dart'; //biblioteca para poder utilizar a formatação de data

@@ -1,5 +1,5 @@
 /* revisado */
-import 'package:desenvolvimento_flutter/FlutterIniciante/navegacao_entre_telas2.dart';
+import 'package:curso_flutter_jd/FlutterIniciante/navegacao_entre_telas2.dart';
 import 'package:flutter/material.dart';
 /* revisado */
 class Tela_Principal extends StatefulWidget {

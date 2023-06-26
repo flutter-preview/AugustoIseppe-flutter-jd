@@ -1,4 +1,4 @@
-import 'package:desenvolvimento_flutter/model/anotacao.dart';
+import 'package:curso_flutter_jd/model/anotacao.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
