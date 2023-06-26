@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'FlutterIniciante/switch_and_slider.dart';
-
+import 'AppNotasDiarias_Home.dart';
 
 void main () {
   runApp(MaterialApp(
-    home: Switch_and_Slider(),
+    home: Home(),
   ));
 }

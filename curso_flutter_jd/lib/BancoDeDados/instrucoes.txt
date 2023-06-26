@@ -1,0 +1,21 @@
+//1º -> baixar o plugin sqflite no site pub.dev
+//2º -> criar o caminho para o banco de dados
+//3º -> criar um arquivo de banco de dados
+
+
+####### MÉTODO PARA CRIAR O BANCO DE DADOS #######
+       
+  _recuperarBandoDeDados() async{
+
+    final caminhoBandoDados = await getDatabasesPath();
+    final localBandoDados = join(caminhoBandoDados, "banco.db");
+    var retorno = await openDatabase(
+      localBandoDados,
+      version: 1,
+      onCreate: (db, dbVersaoRecente) {
+        String sql = 'CREATE TABLE usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR, idade INTEGER)';
+        db.execute(sql);
+      },
+    );
+    print('Aberto: ' + retorno.isOpen.toString());
+  }
