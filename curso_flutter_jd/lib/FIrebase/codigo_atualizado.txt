@@ -1,0 +1,62 @@
+
+//!MÉTODO PARA INICIALIZAR O FIREBASE
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  FirebaseFirestore db = FirebaseFirestore.instance;
+
+  //! MÉTODO PARA SALVAR E ATUALIZAR DADOS NO FIREBASE USANDO ID AUTOMÁTICO
+  // DocumentReference ref = await db.collection("noticias")
+  // .add({ //usando o add o identificado é gerado automaticamente
+  //   "titulo" : "Palmeiras é campeão da Libertadores 2023",
+  //   "descricao" : "pela 3x consecutiva, verdao é campeao batendo o River da Argentina"
+  // });
+  // print('Id Salvo: ' + ref.id);
+  // DocumentReference ref = await db.collection("usuarios")
+  // .add({ //usando o add o identificado é gerado automaticamente
+  //   "nome" : "eita lele",
+  //   "idade" : "670"
+  // });
+  // print('Id Salvo: ' + ref.id);
+
+  //!MÉTODO PARA ATUALIZAR DADOS NO FIREBASE UTILIZANDO ID AUTOMÁTICO
+  // db.collection("noticias")
+  // .doc("dUPaHfLa1vvzVMfI92qV") /* aqui é passado o ig gerado pelo firebase para poder alterar os dados */
+  // .set({
+  //   "titulo" : "Palmeiras é campeão da Libertadores 2023 - ATUALIZADO",
+  //   "descricao" : "pela 3x consecutiva, verdao é campeao batendo o River da Argentina - ATUALIZADO"
+  // });
+
+  //!REMOVENDO UM ITEM DO BANCO DE DADOS
+  db
+      .collection("usuarios")
+      .doc('LI8WuqoDgQpJn7J0fDmi') //*id do dado
+      .delete();
+
+  //!RECUPERANDO DADOS DO BANCO DE DADOS APENAS UM USUARIO
+  DocumentSnapshot snapshot = await db.collection("usuarios").doc("002").get();
+  print("Nome: " +
+      snapshot.get("nome").toString() +
+      "- Idade: " +
+      snapshot.get("idade").toString());
+
+  // //! RECUPERANDO DADOS DE VARIOS USUARIOS SEM ATUALIZAR OS PROXIMOS ADICIONADOS
+  // QuerySnapshot querySnapshot = await db
+  // .collection("usuarios")
+  // .get();
+  // for ( DocumentSnapshot item in querySnapshot.docs ) {
+  //   //*for para percorrer todos os usuarios
+  //   var dados = item.get;
+  //   print("Id: " + item.id + "- Nome:" + dados('nome') + " - " + dados("idade"));
+  // }
+  db.collection("usuarios").snapshots().listen((snapshot) {
+    for (DocumentSnapshot item in snapshot.docs) {
+      //*for para percorrer todos os usuarios
+      var dados = item.get;
+      print("Id: " + item.id + "- Nome:" + dados('nome') + " - " + dados("idade"));
+    }
+  });
+
+  runApp(MaterialApp(
+    home: TestesFirebase(),
+  ));
+}
